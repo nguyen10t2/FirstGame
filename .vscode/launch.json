@@ -1,0 +1,34 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "ProcessingImage",
+            "request": "launch",
+            "mainClass": "ImageProcess.ProcessingImage",
+            "projectName": "FirstGame_513eefcf"
+        },
+        {
+            "type": "java",
+            "name": "GamePlane",
+            "request": "launch",
+            "mainClass": "GameWindow.GamePlane",
+            "projectName": "FirstGame_513eefcf",
+            "vmArgs": "--module-path ${workspaceFolder}/lib --add-modules ALL-MODULE-PATH -Djava.library.path=${workspaceFolder}/lib/bin",
+        },
+        {
+            "type": "java",
+            "name": "Source",
+            "request": "launch",
+            "mainClass": "Enum.Source",
+            "projectName": "FirstGame_513eefcf"
+        },
+        {
+            "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "Main.MainClass",
+            "vmArgs": "--module-path ${workspaceFolder}/lib --add-modules ALL-MODULE-PATH -Djava.library.path=${workspaceFolder}/lib/bin",
+        }
+    ]
+}
