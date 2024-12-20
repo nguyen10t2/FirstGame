@@ -41,6 +41,7 @@ public class ViewManager {
 
     private ButtonOfScene createButton() {
         ButtonOfScene buttonOfScene = new ButtonOfScene(new SRBlackButton());
+        buttonOfScene.setLayout((int) (width - buttonOfScene.getButton().getPrefWidth()), 0);
         mainPane.getChildren().add(buttonOfScene.getButton());
         return buttonOfScene;
     }

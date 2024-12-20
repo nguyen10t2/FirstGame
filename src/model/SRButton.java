@@ -14,12 +14,21 @@ public class SRButton extends Button {
 		this.BUTTON_PRESSED_STYLE = buttonPressedStyle;
         this.BUTTON_FREE_STYLE = buttonFreeStyle;
         this.BUTTON_HOVER_STYLE = buttonHoverStyle;
-        setText("EXIT");
-        setPrefHeight(46);
-        setPrefWidth(110);
-        setStyle(BUTTON_FREE_STYLE);
+        setLayout(46, 110);
+        setTextFill("EXIT");
         initallizeButton();
+        this.textFillProperty().set(javafx.scene.paint.Color.WHITE);
 	}
+
+    private void setLayout(double x, double y) {
+        setPrefHeight(x);
+        setPrefWidth(y);
+    }
+
+    private void setTextFill(String text) {
+        setText(text);
+        setStyle(BUTTON_FREE_STYLE);
+    }
 
     private void setButtonPressedStyle() {
         setStyle(BUTTON_PRESSED_STYLE);
