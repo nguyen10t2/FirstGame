@@ -15,7 +15,9 @@ public class Exit {
     public void exit(ButtonOfScene buttonOfScene) {
         Button button = buttonOfScene.getButton();
         button.setOnAction(e -> {
-            mainStage.close();
+            if(buttonOfScene.isButtonPressed()) {
+                mainStage.close();
+            }
         });
     }
 }
