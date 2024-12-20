@@ -14,7 +14,7 @@
             "request": "launch",
             "mainClass": "GameWindow.GamePlane",
             "projectName": "FirstGame_513eefcf",
-            "vmArgs": "--module-path ${workspaceFolder}/lib --add-modules ALL-MODULE-PATH -Djava.library.path=${workspaceFolder}/lib/bin",
+            "vmArgs": "--module-path ${workspaceFolder}/lib --add-modules ALL-MODULE-PATH -Djava.library.path=${workspaceFolder}/lib/bin"
         },
         {
             "type": "java",
@@ -28,7 +28,7 @@
             "name": "Launch App",
             "request": "launch",
             "mainClass": "Main.MainClass",
-            "vmArgs": "--module-path ${workspaceFolder}/lib --add-modules ALL-MODULE-PATH -Djava.library.path=${workspaceFolder}/lib/bin",
+            "vmArgs": "--module-path ${workspaceFolder}/lib --add-modules ALL-MODULE-PATH -Djava.library.path=${workspaceFolder}/lib/bin"
         }
     ]
 }

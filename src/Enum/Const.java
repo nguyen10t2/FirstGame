@@ -1,8 +1,8 @@
 package Enum;
 
 public enum Const {
-    height(1015),
-    width(600);
+    height(600),
+    width(1015);
 
     private final int value;
 
