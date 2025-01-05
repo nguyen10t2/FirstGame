@@ -56,7 +56,7 @@ public class ViewManager {
     }
 
     private Knight createKnight() {
-        Knight knight = new Knight(Source.knightSize, new Image("file:" + Source.yellowKnight));
+        Knight knight = new Knight();
         knight.getSprite().setLayoutX(width / 2 - knight.getSprite().getFitWidth() / 2);
         knight.getSprite().setLayoutY(height - knight.getSprite().getFitHeight() - 100);
         knight.setGroundY(knight.getSprite().getLayoutY());

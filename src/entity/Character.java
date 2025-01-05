@@ -29,13 +29,7 @@ public class Character {
     private boolean keyPressedA = false;
     private boolean keyPressedD = false;
 
-    public Character(int[] characters, Image image) {
-        this.health = characters[0];
-        this.attack = characters[1];
-        this.speed = characters[2];
-        this.sprite = new ImageView(image);
-        this.sprite.setFitWidth(characters[3]);
-        this.sprite.setFitHeight(characters[4]);
+    public Character() {
         gameLoop = new AnimationTimer() {
             @Override
             public void handle(long now) {
@@ -48,9 +42,9 @@ public class Character {
 
     public void handleKeyPressed(KeyEvent event) {
         switch (event.getCode()) {
+            case W -> keyPressedW = true;
             case A -> keyPressedA = true;
             case D -> keyPressedD = true;
-            case W -> keyPressedW = true;
             default -> {
             }
         }
@@ -134,6 +128,25 @@ public class Character {
     public void setGroundY(double groundY) {
         this.groundY = groundY;
     }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
+    public void setAttack(int attack) {
+        this.attack = attack;
+    }
+
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+
+    public void setSprite(ImageView sprite) {
+        this.sprite = sprite;
+        this.sprite.setFitWidth(128);
+        this.sprite.setFitHeight(128);
+    }
+ 
 
     public ImageView getSprite() {
         return sprite;
