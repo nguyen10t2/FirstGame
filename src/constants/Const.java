@@ -1,4 +1,4 @@
-package Enum;
+package constants;
 
 public enum Const {
     height(600),

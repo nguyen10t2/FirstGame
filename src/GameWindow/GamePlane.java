@@ -1,11 +1,11 @@
-package GameWindow;
+package gameWindow;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.image.Image;
-import Enum.Source;
-import View.ViewManager;
-import View.Exit;
+import constants.Source;
+import view.ViewManager;
+import view.Exit;
 
 public class GamePlane extends Application {
     private ViewManager viewManager = new ViewManager();

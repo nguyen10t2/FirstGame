@@ -1,6 +1,6 @@
-package Main;
+package main;
 
-import GameWindow.GamePlane;
+import gameWindow.GamePlane;
 
 public class MainClass{
 

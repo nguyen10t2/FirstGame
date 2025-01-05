@@ -3,6 +3,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "GamePlane",
+            "request": "launch",
+            "mainClass": "gameWindow.GamePlane",
+            "projectName": "FirstGame_513eefcf"
+        },
+        {
+            "type": "java",
+            "name": "MainClass",
+            "request": "launch",
+            "mainClass": "main.MainClass",
+            "projectName": "FirstGame_513eefcf"
+        },
+        {
+            "type": "java",
             "name": "ProcessingImage",
             "request": "launch",
             "mainClass": "ImageProcess.ProcessingImage",
