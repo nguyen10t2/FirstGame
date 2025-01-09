@@ -2,39 +2,38 @@ package entity;
 
 import javafx.animation.AnimationTimer;
 import javafx.scene.image.ImageView;
-import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 
-public class Character {
-    private int health;
-    private int attack;
-    private int speed;
-    private double groundY;
-    private ImageView sprite;
+public abstract class Character {
+    protected int health;
+    protected int attack;
+    protected int speed;
+    protected double groundY;
+    protected ImageView sprite;
 
-    private boolean moveLeft = false;
-    private boolean moveRight = false;
-    private boolean isJumping = false;
+    protected boolean moveLeft = false;
+    protected boolean moveRight = false;
+    protected boolean isJumping = false;
 
-    private double velocityY = 0;
-    private double velocityX = 0;
+    protected double velocityY = 0;
+    protected double velocityX = 0;
 
-    private final double gravity = 0.6;
-    private final double jumpSpeed = 12;
-    private double jumpTime = 0;
+    protected final double gravity = 0.6;
+    protected final double jumpSpeed = 12;
+    protected double jumpTime = 0;
 
-    private AnimationTimer gameLoop;
+    protected AnimationTimer gameLoop;
 
-    private boolean keyPressedW = false;
-    private boolean keyPressedA = false;
-    private boolean keyPressedD = false;
+    protected boolean keyPressedW = false;
+    protected boolean keyPressedA = false;
+    protected boolean keyPressedD = false;
 
     public Character() {
         gameLoop = new AnimationTimer() {
             @Override
             public void handle(long now) {
                 updateMovement();
-                updatePosition(800);
+                updatePosition(760);
             }
         };
         gameLoop.start();
@@ -67,8 +66,14 @@ public class Character {
             jumpTime = 0;
             if (keyPressedA) {
                 velocityX = -speed * 0.5;
+                if (sprite.getScaleX() > 0) {
+                    sprite.setScaleX(-1);
+                }
             } else if (keyPressedD) {
                 velocityX = speed * 0.5;
+                if (sprite.getScaleX() < 0) {
+                    sprite.setScaleX(1);
+                }
             }
         }
     }
@@ -91,8 +96,9 @@ public class Character {
 
     protected void updatePosition(double boundary) {
         if (isJumping) {
+            double newX = sprite.getLayoutX() + velocityX;
             sprite.setLayoutY(sprite.getLayoutY() + velocityY);
-            sprite.setLayoutX(sprite.getLayoutX() + velocityX);
+            sprite.setLayoutX(Math.min(boundary + sprite.getFitWidth(), Math.max(0, newX)));
             jumpTime += 0.01;
             velocityY += gravity;
             if (sprite.getLayoutY() >= groundY) {
